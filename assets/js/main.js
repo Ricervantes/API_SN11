@@ -1,1 +1,15 @@
 console.log("Entro al main.js");
+const URL="https://picsum.photos/200/300";
+
+const randomImage = () => {
+    console.log("entro a la funcion randomImage");
+    
+    fetch(URL)
+        .then((data) => {
+            console.log(data);
+            document.getElementById('imgRandom').src = data.url;
+        })
+        .catch((error) => {
+            console.log("Ocurrio un error!");
+        });
+}
